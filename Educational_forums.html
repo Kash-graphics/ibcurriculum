@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teachers & Learners Hub - Explore Physics and Math Resources">
+    <meta name="keywords" content="teachers, learners, hub, physics, math, resources">
+    <meta name="author" content="Your Name">
+    <title>Teachers & Learners Hub</title>
+    <!-- Add Bootstrap CSS for responsiveness -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.main {
+    text-align: center;
+}
+
+#cbcButton {
+    background-color: #03a9f4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 40px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#cbcButton:hover {
+    background-color: #0288d1;
+}
+
+#popup-container {
+    text-align: center;
+}
+
+.accordion {
+    background-color: #333333;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 18px;
+    width: 80%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: 5px;
+}
+
+.accordion:hover {
+    background-color: #444444;
+}
+
+.panel {
+    display: none;
+    padding: 0 18px;
+    background-color: #212121;
+    overflow: hidden;
+    width: 80%;
+    margin: 5px auto;
+}
+
+.content-button {
+    background-color: #03a9f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.content-button:hover {
+    background-color: #0288d1;
+}
+
+        /* Add your custom CSS styles here */
+
+        /* Responsive styles using a media query */
+        @media (max-width: 768px) {
+            /* Adjust styles for smaller screens here */
+            .main {
+                text-align: center;
+            }
+
+            #popup-container {
+                width: 80%;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Create the main section with a big CBC button -->
+    <div class="main">
+        <button id="cbcButton" onclick="showPopup()" class="btn btn-primary">JOIN EDUCATINAL FORUM</button>
+        <button><a href="index.html">Go Back</a></button>
+    </div>
+
+    <!-- Popup container -->
+    <div id="popup-container" class="panel" style="display: none;">
+        <h2>Choose your Preference(s)</h2>
+        <!-- Accordion for Others -->
+        <button class="accordion btn btn-secondary">SEMINORS $ WORKSHOPS</button>
+        <div class="panel">
+            <!-- Content for Others -->
+            <ul>
+                <li><a href="emptypage.html"> Sample seminor/Workshop</a></li>
+                <li><a href="emptypage.html"> Sample seminor/Workshop</a></li>
+                <!-- Add similar lines for other years -->
+            </ul>
+        </div>
+        <button class="accordion btn btn-secondary">SOCIAL GROUPS/PLATFORMS</button>
+        <div class="panel">
+            <!-- Content for Others -->
+            <ul>
+                <li><a href="emptypage.html"> Whatsup link One</a></li>
+                <li><a href="emptypage.html"> Whatsup link One</a></li>
+                <li><a href="emptypage.html"> Online training Link1</a></li>
+                <!-- Add similar lines for other years -->
+            </ul>
+        </div>
+    </div>
+    <script>
+        
+        function showPopup() {
+            var popup = document.getElementById("popup-container");
+            popup.style.display = "block";
+        }
+
+        function downloadFile(year) {
+            var popupOptions = confirm("Do you want to download the document for " + year + "?");
+
+            if (popupOptions) {
+                // Download the document
+                window.location.href = year + ".pdf";
+            }
+        }
+
+
+
+
+
+
+        // Function to show the popup
+function showPopup() {
+    var popupContainer = document.getElementById('popup-container');
+    popupContainer.style.display = 'block';
+}
+
+// Accordion functionality
+var accordions = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < accordions.length; i++) {
+    accordions[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+
+// Function to handle button clicks
+function buttonClick(message) {
+    alert(message);
+}
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teachers & Learners Hub - Explore Physics and Math Resources">
+    <meta name="keywords" content="teachers, learners, hub, physics, math, resources">
+    <meta name="author" content="Your Name">
+    <title>Teachers & Learners Hub</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main {
+            text-align: center;
+        }
+
+        #cbcButton {
+            background-color: #03a9f4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 20px 40px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        #cbcButton:hover {
+            background-color: #0288d1;
+        }
+
+        #popup-container {
+            text-align: center;
+        }
+
+        .accordion {
+            background-color: #333333;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 18px;
+            width: 80%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            margin: 5px;
+        }
+
+        .accordion:hover {
+            background-color: #444444;
+        }
+
+        .panel {
+            display: none;
+            padding: 0 18px;
+            background-color: #212121;
+            overflow: hidden;
+            width: 80%;
+            margin: 5px auto;
+        }
+
+        .content-button {
+            background-color: #03a9f4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            display: block;
+        }
+
+        .content-button:hover {
+            background-color: #0288d1;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        /* Add your custom CSS styles here */
+
+        /* Responsive styles using a media query */
+        @media (max-width: 768px) {
+            /* Adjust styles for smaller screens here */
+            #popup-container {
+                width: 90%;
+            }
+
+            .accordion {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Create the main section with a big CBC button -->
+    <div class="main">
+        <button id="cbcButton" onclick="showPopup()">SELECT LEVEL </button>
+        <button><a href="index.html" style="color: rgb(252, 15, 15);">Go Back</a></button>
+    </div>
+
+    <!-- Popup container -->
+    <div id="popup-container" class="panel" style="display: none;">
+        <h2>Choose your Preference(s)</h2>
+        <!-- Accordion for UNEB -->
+        <button class="accordion">A'LEVEL</button>
+        <div class="panel">
+            <!-- Content for UNEB -->
+            <button class="content-button" onclick="buttonClick('Explore various past Papers from different sources including , UNEB, MOCKS, revion questions from different schools and expert teachers')"><a href="pastpapers-sets.html">Past Papers</a></button>
+            <button class="content-button" onclick="buttonClick('Would you like to explore all you need Marking Guides?? You are in the right place, Click ok')"><a href="marking_guides.html">Marking Guides</a></button>
+            <button class="content-button" onclick="buttonClick('On this page, i will provide you with all you need Question Banks, UNEB, Revion and many others, Thanks to creator Teacher Bosco. Clickok to Continue')"><a href="Questionbanks.html">Question Banks</a></button>
+            <button class="content-button" onclick="buttonClick('Do you need Learners books for all levels, Congraturations. Click ok to access all you need learners books. Dont pay anything')"><a href="Learnersbook.html">Learners Books</a></button>
+            <button class="content-button" onclick="buttonClick('Click ok to Continue, You will access Revion books both from online Libraries and School Libraries as well, This is a collective repository')"><a href="Revisionbooks.html">Revision Books</a></button>
+            <button class="content-button" onclick="buttonClick('Pamphlets from well known publishers, Lets start Revision Journey together')"><a href="pamphlets.html">Pamphlets</a></button>
+            <button class="content-button" onclick="buttonClick('With Video resources, i will provide you with recorded tutorials for complex topics, Well thanks from contributors of this page. I will also provide you valuable educational video content from online expert teachers')"><a href="videoresources.html">Video Resources</a></button>
+        </div>
+        <!-- Accordion for MOCKS -->
+        <button class="accordion">O'LEVEL</button>
+        <div class="panel">
+            <!-- Content for MOCKS -->
+            <button class="content-button" onclick="buttonClick('Looking for old papers<??Explore various past Papers from different sources including , UNEB, MOCKS, revion questions from different schools and expert teachers')"><a href="pastpapers-sets.html">Past Papers</a></button>
+            <button class="content-button" onclick="buttonClick('Would you like to explore all you need Marking Guides?? You are in the right place, Click ok')"><a href="marking_guides.html">Marking Guides</a></button>
+            <button class="content-button" onclick="buttonClick('On this page, i will provide you with all you need Question Banks, UNEB, Revion and many others, Thanks to creator Teacher Bosco. Clickok to Continue')"><a href="Questionbanks.html">Question Banks</a></button>
+            <button class="content-button" onclick="buttonClick('Do you need Learners books for all levels, Congraturations. Click ok to access all you need learners books. Dont pay anything')"><a href="Learnersbook.html">Learners Books</a></button>
+            <button class="content-button" onclick="buttonClick('Click ok to Continue, You will access Revion books both from online Libraries and School Libraries as well, This is a collective repository')"><a href="Revisionbooks.html">Revision Books</a></button>
+            <button class="content-button" onclick="buttonClick('Pamphlets from well known publishers, Lets start Revision Journey together')"><a href="pamphlets.html">Pamphlets</a></button>
+            <button class="content-button" onclick="buttonClick('With Video resources, i will provide you with recorded tutorials for complex topics, Well thanks from contributors of this page. I will also provide you valuable educational video content from online expert teachers')"><a href="videoresources.html">Video Resources</a></button>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the popup
+        function showPopup() {
+            var popupContainer = document.getElementById('popup-container');
+            popupContainer.style.display = 'block';
+            document.getElementById('cbcButton').style.display = 'none';
+        }
+
+        // Accordion functionality
+        var accordions = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < accordions.length; i++) {
+            accordions[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        // Function to handle button clicks
+        function buttonClick(message) {
+            alert(message);
+        }
+    </script>
+</body>
+
+</html>

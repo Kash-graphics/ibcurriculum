@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teachers & Learners Hub - Explore Physics and Math Resources">
+    <meta name="keywords" content="teachers, learners, hub, physics, math, resources">
+    <meta name="author" content="Your Name">
+    <title>Teachers & Learners Hub</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main {
+            text-align: center;
+        }
+
+        #cbcButton {
+            background-color: #03a9f4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 20px 40px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        #cbcButton:hover {
+            background-color: #0288d1;
+        }
+
+        #popup-container {
+            text-align: center;
+        }
+
+        .accordion {
+            background-color: #333333;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 18px;
+            width: 80%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            margin: 5px;
+        }
+
+        .accordion:hover {
+            background-color: #444444;
+        }
+
+        .panel {
+            display: none;
+            padding: 0 18px;
+            background-color: #212121;
+            overflow: hidden;
+            width: 80%;
+            margin: 5px auto;
+        }
+
+        .content-button {
+            background-color: #03a9f4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            display: block;
+        }
+
+        .content-button:hover {
+            background-color: #0288d1;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        /* Add your custom CSS styles here */
+
+        /* Responsive styles using a media query */
+        @media (max-width: 768px) {
+            /* Adjust styles for smaller screens here */
+            #popup-container {
+                width: 90%;
+            }
+
+            .accordion {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Create the main section with a big CBC button -->
+    <div class="main">
+        <button id="cbcButton" onclick="showPopup()">Select Past Papers Here </button>
+        <button><a href="index.html" style="color: rgb(252, 15, 15);">Go Back</a></button>
+    </div>
+
+    <!-- Popup container -->
+    <div id="popup-container" class="panel" style="display: none;">
+        <h2>Choose your Preference(s)</h2>
+        <!-- Accordion for UNEB -->
+        <button class="accordion">UNEB</button>
+        <div class="panel">
+            <!-- Content for UNEB -->
+            <button class="content-button"><a href="uneb2013-2000-selectsubject.html">2000-2013</a></button>
+            <button class="content-button"><a href="uneb2014-2023-selectsubject.html">2014-2023</a></button>
+        </div>
+        <!-- Accordion for MOCKS -->
+        <button class="accordion">MOCKS</button>
+        <div class="panel">
+            <!-- Content for MOCKS -->
+            <button class="content-button" onclick="buttonClick('Continue to see MOCK past papers for different districts')"><a href="#">District Mocks</a></button>
+            <button class="content-button" onclick="buttonClick('Continue to see MOCK past papers for different regions')"><a href="#">Regional Mocks</a></button>
+            <button class="content-button" onclick="buttonClick('Continue to see MOCK past papers for different schools')"><a href="#">Internal Mocks</a></button>
+        </div>
+        <!-- Accordion for OTHERS -->
+        <button class="accordion">OTHERS</button>
+        <div class="panel">
+            <!-- Content for OTHERS -->
+            <button class="content-button" onclick="buttonClick('Continue to see TERMLY past papers for different schools')"><a href="#">End of term</a></button>
+            <button class="content-button" onclick="buttonClick('Continue to see TERMLY past papers for different schools')"><a href="#">Beginning of term</a></button>
+            <button class="content-button" onclick="buttonClick('Continue to see TEST past papers For different schools1')"><a href="#">Tests</a></button>
+            <button class="content-button" onclick="buttonClick('Continue to see SEMINAR past papers with questions from different workshops')"><a href="#">Seminar Papers</a></button>
+            <button class="content-button" onclick="buttonClick('Continue to see REVISION past papers from different schools and teachers')"><a href="#">Revision questions</a></button>
+            <button class="content-button" onclick="buttonClick('Continue to see SPECIAL PACKAGE past papers from different schools and teachers')"><a href="#">Holiday Packages</a></button>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the popup
+        function showPopup() {
+            var popupContainer = document.getElementById('popup-container');
+            popupContainer.style.display = 'block';
+            document.getElementById('cbcButton').style.display = 'none';
+        }
+
+        // Accordion functionality
+        var accordions = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < accordions.length; i++) {
+            accordions[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        // Function to handle button clicks
+        function buttonClick(message) {
+            alert(message);
+        }
+    </script>
+</body>
+
+</html>
